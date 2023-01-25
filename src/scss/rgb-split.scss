@@ -1,0 +1,59 @@
+body{
+    background-color:black;
+}
+.rgb-split {
+  color: #0f0;
+  //设置混合模式为差值
+  mix-blend-mode: lighten;
+  //相对定位
+  position: relative;
+  &:before, &:after {
+    //设置两个伪元素绝对定位
+    position: absolute;
+    top: 0;
+    left: 0;
+    mix-blend-mode: difference;
+  }
+  &:before {
+    //拿到data-text设置为伪元素的content
+    content: attr(data-text);
+    color: #f00;
+    //设置动画，持续时间，循环次数
+    animation: ANIMATE-RED 2000ms infinite;
+  
+}
+  &:after {
+    content: attr(data-text);
+    color: #00f;
+    //设置动画，持续时间，循环次数
+    animation: ANIMATE-BLUE 2000ms infinite;
+  }
+}
+
+@keyframes ANIMATE-RED {
+  0% {
+    transform: translate(1px, 1px)
+  }
+
+  50% {
+    transform: translate(3px,3px)
+  }
+
+  100% {
+    transform: translate(1px, 1px)
+  }
+}
+
+@keyframes ANIMATE-BLUE {
+  0% {
+    transform: translate(-1px, -1px)
+  }
+
+  50% {
+    transform: translate(-3px, -3px)
+  }
+
+  100% {
+    transform: translate(-1px, -1px)
+  }
+}

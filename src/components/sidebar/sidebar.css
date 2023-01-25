@@ -1,0 +1,27 @@
+.aside {
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 8px; /* 导航栏的logo与子物体距离其的内边距 */
+    width: 70px;    /* 导航栏的宽度和auto高度 */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 10;
+}
+.nav__logo{
+    padding-bottom: 100px;
+}
+.nav__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.6rem;
+    padding-bottom: 12rem;
+}
+.nav__link{
+    color: #fff;
+    writing-mode:vertical-lr;
+    font-size: 25px;
+    font-weight:600;
+}

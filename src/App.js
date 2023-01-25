@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-
+﻿import "./App.css";
+import "./index.css";
+import React, { Component } from "react";
+import FirstBg from "./pics/first_bg.png"
+/* ==== 添加components ==== */
+import Sidebar from "./components/sidebar/Sidebar";
+import Home from "./components/home/Home";
+import About from "./components/about/About";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    /* 表示包裹在父元素中 */
+      <>
+          <div className="try">
+              <img src={FirstBg} alt="" />
+          </div>
+      <div className="trytwo">
+        <div className="rgb-split" data-text="做的了个P">
+          做的了个P
+        </div>
+      </div>
+      <Sidebar />
+      <main className="main">
+        <Home />
+        <About />
+      </main>
+    </>
   );
 }
-
 export default App;
+
